@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Snardle — Savage Wordle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <span class="mode-badge" id="mode-label">ENDLESS</span>
+    </div>
+    <h1 class="header-title">SNARDLE</h1>
+    <div class="header-controls">
+      <button class="btn-icon" id="mode-toggle-btn" title="Toggle Mode">Switch to Daily</button>
+      <button class="btn-icon" id="new-game-btn" title="New Word">New Word</button>
+      <button class="btn-icon" id="stats-btn" title="Stats">📊</button>
+    </div>
+  </header>
+
+  <!-- Savage Narrator Card -->
+  <div class="narrator-container" id="narrator-container">
+    <div class="narrator-avatar">😈</div>
+    <div class="narrator-body">
+      <div class="narrator-label">Savage Narrator</div>
+      <div class="narrator-text" id="narrator-text">6 tries to guess a 5-letter word. Try not to embarrass yourself.</div>
+    </div>
+  </div>
+
+  <!-- Game Board Grid (6x5) -->
+  <div class="board-container">
+    <div class="board" id="board"></div>
+  </div>
+
+  <!-- Virtual Keyboard -->
+  <div class="keyboard" id="keyboard"></div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Stats Modal -->
+  <div class="modal-overlay" id="stats-modal">
+    <div class="modal">
+      <h2 id="modal-title">Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="val" id="stat-played">0</div>
+          <div class="lbl">Played</div>
+        </div>
+        <div class="stat-item">
+          <div class="val" id="stat-win-pct">0%</div>
+          <div class="lbl">Win %</div>
+        </div>
+        <div class="stat-item">
+          <div class="val" id="stat-current-streak">0</div>
+          <div class="lbl">Current Streak</div>
+        </div>
+        <div class="stat-item">
+          <div class="val" id="stat-max-streak">0</div>
+          <div class="lbl">Max Streak</div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-primary" id="share-btn">Share Score</button>
+        <button class="btn-secondary" id="close-modal-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script dependencies in order -->
+  <script src="words.js"></script>
+  <script src="narrator.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
